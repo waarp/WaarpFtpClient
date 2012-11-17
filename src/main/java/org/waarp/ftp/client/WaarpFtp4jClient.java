@@ -43,7 +43,6 @@ import javax.net.ssl.X509TrustManager;
 
 import org.waarp.common.logging.WaarpInternalLogger;
 import org.waarp.common.logging.WaarpInternalLoggerFactory;
-import org.waarp.utils.NullOutputStream;
 
 /**
  * FTP client using FTP4J model (working in all modes)

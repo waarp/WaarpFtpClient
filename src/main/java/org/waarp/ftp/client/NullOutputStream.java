@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.waarp.utils;
+package org.waarp.ftp.client;
 
 import java.io.IOException;
 import java.io.OutputStream;

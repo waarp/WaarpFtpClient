@@ -4,8 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import org.waarp.ftp.client.NullOutputStream;
 import org.waarp.ftp.client.WaarpFtpClient;
-import org.waarp.utils.NullOutputStream;
 
 /**
  * FTP Apache Commons-Net client transaction test
