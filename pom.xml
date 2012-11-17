@@ -219,6 +219,7 @@
 	            -link http://static.netty.io/3.5/api/
 
 				-group "Waarp FTP Client for R66 package" "org.waarp.ftp.client*"
+				-group "Waarp FTP Client for Gateway package" "org.waarp.ftp.gateway.exec*"
 
 	            -sourceclasspath ${basedir}/target/classes
 	          </additionalparam>
