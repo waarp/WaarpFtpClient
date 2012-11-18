@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2012-11-17T23:07:00.143">
+<file name="J:\Git\github\waarp-digest\WaarpFtpClient\src\main\java\org\waarp\ftp\client\DataTimeOutListener.java">
+<violation beginline="45" endline="45" begincolumn="23" endcolumn="27" rule="ImmutableField" ruleset="Design Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" variable="timer" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ImmutableField" priority="3">
+Private field 'timer' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="46" endline="46" begincolumn="22" endcolumn="28" rule="ImmutableField" ruleset="Design Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" variable="timeout" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ImmutableField" priority="3">
+Private field 'timeout' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="49" endline="49" begincolumn="24" endcolumn="30" rule="ImmutableField" ruleset="Design Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" variable="command" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ImmutableField" priority="3">
+Private field 'command' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="50" endline="50" begincolumn="24" endcolumn="27" rule="ImmutableField" ruleset="Design Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" variable="file" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ImmutableField" priority="3">
+Private field 'file' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="71" endline="72" begincolumn="43" endcolumn="41" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" method="run" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="72" endline="73" begincolumn="43" endcolumn="41" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="DataTimeOutListener" method="run" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="J:\Git\github\waarp-digest\WaarpFtpClient\src\main\java\org\waarp\ftp\client\NullOutputStream.java">
+<violation beginline="20" endline="21" begincolumn="16" endcolumn="9" rule="UncommentedEmptyConstructor" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyConstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="24" endline="25" begincolumn="48" endcolumn="9" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" method="close" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="28" endline="29" begincolumn="48" endcolumn="9" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" method="flush" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="32" endline="33" begincolumn="74" endcolumn="9" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" method="write" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="36" endline="37" begincolumn="56" endcolumn="9" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" method="write" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="44" endline="45" begincolumn="53" endcolumn="9" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="NullOutputStream" method="write" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+</file>
+<file name="J:\Git\github\waarp-digest\WaarpFtpClient\src\main\java\org\waarp\ftp\client\WaarpFtp4jClient.java">
+<violation beginline="71" endline="71" begincolumn="17" endcolumn="46" rule="SingularField" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" variable="binaryTransfer" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#SingularField" priority="3">
+Perhaps 'binaryTransfer' could be replaced by a local variable.
+</violation>
+<violation beginline="96" endline="127" begincolumn="17" endcolumn="17" rule="ConfusingTernary" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ConfusingTernary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="99" endline="101" begincolumn="40" endcolumn="33" rule="ReturnEmptyArrayRatherThanNull" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ReturnEmptyArrayRatherThanNull" priority="1">
+Return an empty array rather than null.
+</violation>
+<violation beginline="103" endline="104" begincolumn="106" endcolumn="33" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="checkClientTrusted" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="106" endline="107" begincolumn="106" endcolumn="33" rule="UncommentedEmptyMethod" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="checkServerTrusted" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyMethod" priority="3">
+Document empty method
+</violation>
+<violation beginline="243" endline="245" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="logout" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="245" endline="247" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="logout" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="247" endline="249" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="logout" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="249" endline="251" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="logout" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="526" endline="526" begincolumn="53" endcolumn="73" rule="UseLocaleWithCaseConversions" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtp4jClient" method="featureEnabled" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UseLocaleWithCaseConversions" priority="3">
+When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+</violation>
+</file>
+<file name="J:\Git\github\waarp-digest\WaarpFtpClient\src\main\java\org\waarp\ftp\client\WaarpFtpClient.java">
+<violation beginline="60" endline="60" begincolumn="17" endcolumn="46" rule="SingularField" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" variable="binaryTransfer" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#SingularField" priority="3">
+Perhaps 'binaryTransfer' could be replaced by a local variable.
+</violation>
+<violation beginline="84" endline="91" begincolumn="17" endcolumn="17" rule="ConfusingTernary" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ConfusingTernary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="194" endline="196" begincolumn="35" endcolumn="33" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" method="logout" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="342" endline="343" begincolumn="35" endcolumn="33" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" method="transferFile" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="347" endline="348" begincolumn="35" endcolumn="33" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" method="transferFile" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="386" endline="386" begincolumn="57" endcolumn="77" rule="UseLocaleWithCaseConversions" ruleset="Design Rules" package="org.waarp.ftp.client" class="WaarpFtpClient" method="featureEnabled" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UseLocaleWithCaseConversions" priority="3">
+When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+</violation>
+</file>
+<file name="J:\Git\github\waarp-digest\WaarpFtpClient\src\main\java\org\waarp\ftp\gateway\exec\JavaExecutorWaarpFtp4jClient.java">
+<violation beginline="93" endline="94" begincolumn="16" endcolumn="9" rule="UncommentedEmptyConstructor" ruleset="Design Rules" package="org.waarp.ftp.gateway.exec" class="JavaExecutorWaarpFtp4jClient" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#UncommentedEmptyConstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="246" endline="259" begincolumn="33" endcolumn="33" rule="SwitchStmtsShouldHaveDefault" ruleset="Design Rules" package="org.waarp.ftp.gateway.exec" class="JavaExecutorWaarpFtp4jClient" method="run" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#SwitchStmtsShouldHaveDefault" priority="3">
+Switch statements should have a default label
+</violation>
+</file>
+</pmd>
