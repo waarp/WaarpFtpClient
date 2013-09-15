@@ -1,8 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>WaarpFtpClient</artifactId>
   <version>1.0.2</version>
   <name>Ftp R66 client </name>
+  <description>FTP client (wrapper of ftp4j) for Waarp solution</description>
   <url>http://waarp.github.com/WaarpFtpClient</url>
   <inceptionYear>2009</inceptionYear>
   <parent>
@@ -57,11 +58,6 @@
       <version>1.0.13</version>
       <optional>true</optional>
     </dependency>
-  	<dependency>
-  		<groupId>Waarp</groupId>
-  		<artifactId>WaarpCommon</artifactId>
-  		<version>1.2.14</version>
-  	</dependency>
   	<dependency>
   		<groupId>Waarp</groupId>
   		<artifactId>WaarpFtp-Core</artifactId>
@@ -216,7 +212,6 @@
 	          <windowtitle>${project.name} ${project.version} API Reference</windowtitle>
 	          <additionalparam>
 	            -link http://java.sun.com/javase/6/docs/api/
-	            -link http://static.netty.io/3.5/api/
 
 				-group "Waarp FTP Client for R66 package" "org.waarp.ftp.client*"
 				-group "Waarp FTP Client for Gateway package" "org.waarp.ftp.gateway.exec*"
@@ -235,4 +230,5 @@
       </plugin>
 	</plugins>
   </reporting>
+  
 </project>
