@@ -111,9 +111,9 @@ public class WaarpFtp4jClient {
 				sslContext = SSLContext.getInstance("SSL");
 				sslContext.init(null, trustManager, new SecureRandom());
 			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
+				throw new IllegalArgumentException("Bad algorithm", e);
 			} catch (KeyManagementException e) {
-				e.printStackTrace();
+				throw new IllegalArgumentException("Bad KeyManagement", e);
 			}
 			SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 			this.ftpClient.setSSLSocketFactory(sslSocketFactory);
