@@ -347,7 +347,7 @@ public class WaarpFtp4jClient {
 			if (this.binaryTransfer) {
 				this.ftpClient.setType(FTPClient.TYPE_BINARY);
 			} else {
-				this.ftpClient.setType(FTPClient.TYPE_BINARY);
+				this.ftpClient.setType(FTPClient.TYPE_TEXTUAL);
 			}
 			return true;
 		} catch (IllegalArgumentException e) {
