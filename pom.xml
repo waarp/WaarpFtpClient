@@ -81,17 +81,6 @@
 			<artifactId>ftp4j</artifactId>
 			<version>1.7.2</version>
 		</dependency>
-		<dependency>
-			<groupId>Waarp</groupId>
-			<artifactId>WaarpGatewayKernel</artifactId>
-			<version>1.0.3</version>
-			<exclusions>
-	  			<exclusion>
-	  				<artifactId>WaarpR66</artifactId>
-	  				<groupId>Waarp</groupId>
-	  			</exclusion>
-  			</exclusions>
-		</dependency>
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
