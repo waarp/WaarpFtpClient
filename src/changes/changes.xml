@@ -5,6 +5,9 @@
 		<author email="waarp1 at free.fr">Frederic Bregier</author>
 	</properties>
 	<body>
+	    <release version="1.0.4" date="2013-12-14" description="Fix release">
+			<action dev="Frederic Bregier" type="fix">Fix with Findbugs</action>
+		</release>
 		<release version="1.0.3" date="2013-16-06" description="Fix release">
 			<action dev="Frederic Bregier" type="fix">Upgrade jar dependencies</action>
 		</release>
