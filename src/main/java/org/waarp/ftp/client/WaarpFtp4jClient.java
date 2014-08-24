@@ -42,7 +42,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 import org.waarp.common.logging.WaarpInternalLogger;
-import org.waarp.common.logging.WaarpInternalLoggerFactory;
+import org.waarp.common.logging.WaarpWaarpLoggerFactory;
 
 /**
  * FTP client using FTP4J model (working in all modes)
@@ -54,7 +54,7 @@ public class WaarpFtp4jClient {
 	/**
 	 * Internal Logger
 	 */
-	private static final WaarpInternalLogger logger = WaarpInternalLoggerFactory
+	private static final WaarpInternalLogger logger = WaarpWaarpLoggerFactory
 			.getLogger(WaarpFtp4jClient.class);
 
 	String server = null;
@@ -159,7 +159,7 @@ public class WaarpFtp4jClient {
 	 */
 	public boolean connect() {
 		result = null;
-		boolean isConnected = false;
+		boolean isActive = false;
 		try {
 			try {
 				this.ftpClient.connect(this.server, this.port);
@@ -222,10 +222,10 @@ public class WaarpFtp4jClient {
 			if (keepalive > 0) {
 				this.ftpClient.setAutoNoopTimeout(keepalive);
 			}
-			isConnected = true;
+			isActive = true;
 			return true;
 		} finally {
-			if ((!isConnected) && this.ftpClient.isConnected()) {
+			if ((!isActive) && this.ftpClient.isActive()) {
 				this.disconnect();
 			}
 		}
@@ -249,7 +249,7 @@ public class WaarpFtp4jClient {
 			} catch (FTPException e) {
 				// do nothing
 			} finally {
-				if (this.ftpClient.isConnected()) {
+				if (this.ftpClient.isActive()) {
 					disconnect();
 				}
 			}

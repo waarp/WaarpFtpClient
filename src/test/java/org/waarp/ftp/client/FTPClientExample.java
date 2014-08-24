@@ -294,7 +294,7 @@ public final class FTPClientExample
 			}
 		} catch (IOException e)
 		{
-			if (ftp.isConnected())
+			if (ftp.isActive())
 			{
 				try
 				{
@@ -461,7 +461,7 @@ public final class FTPClientExample
 			e.printStackTrace();
 		} finally
 		{
-			if (ftp.isConnected())
+			if (ftp.isActive())
 			{
 				try
 				{

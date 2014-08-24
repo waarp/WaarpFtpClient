@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.jboss.netty.logging.InternalLoggerFactory;
+import io.netty.logging.WaarpLoggerFactory;
 import org.waarp.common.logging.WaarpSlf4JLoggerFactory;
 import org.waarp.ftp.client.transaction.FtpClientThread;
 import org.waarp.ftp.client.transaction.Ftp4JClientTransactionTest;
@@ -28,7 +28,7 @@ public class FtpClient {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		InternalLoggerFactory.setDefaultFactory(new WaarpSlf4JLoggerFactory(null));
+		WaarpLoggerFactory.setDefaultFactory(new WaarpSlf4JLoggerFactory(null));
 		System.setProperty("javax.net.debug", "false");
 
 		String server = null;
