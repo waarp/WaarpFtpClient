@@ -294,7 +294,7 @@ public final class FTPClientExample
 			}
 		} catch (IOException e)
 		{
-			if (ftp.isActive())
+			if (ftp.getDataConnectionMode() == FTPClient.ACTIVE_LOCAL_DATA_CONNECTION_MODE)
 			{
 				try
 				{
@@ -461,7 +461,7 @@ public final class FTPClientExample
 			e.printStackTrace();
 		} finally
 		{
-			if (ftp.isActive())
+			if (ftp.getDataConnectionMode() == FTPClient.ACTIVE_LOCAL_DATA_CONNECTION_MODE)
 			{
 				try
 				{

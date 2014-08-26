@@ -21,8 +21,8 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.waarp.common.logging.WaarpInternalLogger;
-import org.waarp.common.logging.WaarpWaarpLoggerFactory;
+import org.waarp.common.logging.WaarpLogger;
+import org.waarp.common.logging.WaarpLoggerFactory;
 
 import it.sauronsoftware.ftp4j.FTPClient;
 import it.sauronsoftware.ftp4j.FTPDataTransferListener;
@@ -38,8 +38,7 @@ public class DataTimeOutListener implements FTPDataTransferListener {
 	/**
 	 * Internal Logger
 	 */
-	private static final WaarpInternalLogger logger = WaarpWaarpLoggerFactory
-			.getLogger(DataTimeOutListener.class);
+	private static final WaarpLogger logger = WaarpLoggerFactory.getLogger(DataTimeOutListener.class);
 
 	private final FTPClient client;
 	private Timer timer;

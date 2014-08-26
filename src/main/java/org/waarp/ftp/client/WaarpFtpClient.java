@@ -31,8 +31,8 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
 import org.apache.commons.net.ftp.FTPSClient;
 import org.apache.commons.net.util.TrustManagerUtils;
-import org.waarp.common.logging.WaarpInternalLogger;
-import org.waarp.common.logging.WaarpWaarpLoggerFactory;
+import org.waarp.common.logging.WaarpLogger;
+import org.waarp.common.logging.WaarpLoggerFactory;
 
 /**
  * FTP Client using Apache Commons net FTP client (not working using FTPS or FTPSE)
@@ -44,7 +44,7 @@ public class WaarpFtpClient {
 	/**
 	 * Internal Logger
 	 */
-	private static final WaarpInternalLogger logger = WaarpWaarpLoggerFactory
+	private static final WaarpLogger logger = WaarpLoggerFactory
 			.getLogger(WaarpFtpClient.class);
 
 	String server = null;
@@ -175,7 +175,7 @@ public class WaarpFtpClient {
 			isActive = true;
 			return true;
 		} finally {
-			if ((!isActive) && this.ftpClient.isActive()) {
+			if ((!isActive) && this.ftpClient.getDataConnectionMode() == FTPClient.ACTIVE_LOCAL_DATA_CONNECTION_MODE) {
 				this.disconnect();
 			}
 		}
@@ -188,7 +188,7 @@ public class WaarpFtpClient {
 		try {
 			this.ftpClient.logout();
 		} catch (IOException e) {
-			if (this.ftpClient.isActive()) {
+			if (this.ftpClient.getDataConnectionMode() == FTPClient.ACTIVE_LOCAL_DATA_CONNECTION_MODE) {
 				try {
 					this.ftpClient.disconnect();
 				} catch (IOException f) {

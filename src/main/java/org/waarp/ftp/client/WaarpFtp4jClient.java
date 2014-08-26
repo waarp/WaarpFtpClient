@@ -41,8 +41,9 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import org.waarp.common.logging.WaarpInternalLogger;
-import org.waarp.common.logging.WaarpWaarpLoggerFactory;
+import org.waarp.common.logging.WaarpLogger;
+import org.waarp.common.logging.WaarpLoggerFactory;
+
 
 /**
  * FTP client using FTP4J model (working in all modes)
@@ -54,8 +55,7 @@ public class WaarpFtp4jClient {
 	/**
 	 * Internal Logger
 	 */
-	private static final WaarpInternalLogger logger = WaarpWaarpLoggerFactory
-			.getLogger(WaarpFtp4jClient.class);
+	private static final WaarpLogger logger = WaarpLoggerFactory.getLogger(WaarpFtp4jClient.class);
 
 	String server = null;
 	int port = 21;
@@ -128,7 +128,7 @@ public class WaarpFtp4jClient {
 		if (timeout > 0) {
 			System.setProperty("ftp4j.activeDataTransfer.acceptTimeout", "" + timeout);
 		}
-		// System.setProperty("ftp4j.activeDataTransfer.hostAddress", "127.0.0.1");
+		System.setProperty("ftp4j.activeDataTransfer.hostAddress", "127.0.0.1");
 
 		this.ftpClient.addCommunicationListener(new FTPCommunicationListener() {
 			public void sent(String arg0) {
@@ -225,7 +225,7 @@ public class WaarpFtp4jClient {
 			isActive = true;
 			return true;
 		} finally {
-			if ((!isActive) && this.ftpClient.isActive()) {
+			if ((!isActive) && !this.ftpClient.isPassive()) {
 				this.disconnect();
 			}
 		}
@@ -249,7 +249,7 @@ public class WaarpFtp4jClient {
 			} catch (FTPException e) {
 				// do nothing
 			} finally {
-				if (this.ftpClient.isActive()) {
+				if (! this.ftpClient.isPassive()) {
 					disconnect();
 				}
 			}
@@ -384,6 +384,7 @@ public class WaarpFtp4jClient {
 			if (getStoreOrAppend > 0) {
 				File from = new File(local);
 				result = "Cannot finalize store like operation";
+				logger.debug("Will STOR: "+from);
 				try {
 					if (getStoreOrAppend == 1) {
 						this.ftpClient.upload(from, new DataTimeOutListener(ftpClient, timeout,
@@ -416,6 +417,7 @@ public class WaarpFtp4jClient {
 				if (local == null) {
 					// test
 					NullOutputStream nullOutputStream = new NullOutputStream();
+	                logger.debug("Will DLD nullStream: "+remote);
 					try {
 						this.ftpClient.download(remote, nullOutputStream, 0,
 								new DataTimeOutListener(ftpClient, timeout, "RETR", remote));
@@ -437,6 +439,7 @@ public class WaarpFtp4jClient {
 						return false;
 					}
 				} else {
+				    logger.debug("Will DLD to local: "+remote+" into "+local);
 					File to = new File(local);
 					try {
 						this.ftpClient.download(remote, to, new DataTimeOutListener(ftpClient,
