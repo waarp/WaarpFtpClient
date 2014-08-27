@@ -14,7 +14,7 @@ import org.waarp.ftp.client.transaction.FtpClientThread;
 import org.waarp.ftp.client.transaction.Ftp4JClientTransactionTest;
 
 /**
- * Simple test example using predefined scenario
+ * Simple test example using predefined scenario (Note: this uses the configuration example for user shutdown command)
  * 
  * @author frederic
  * 
@@ -66,7 +66,10 @@ public class FtpClient {
 		if (args.length > 10) {
 			isSSL = Integer.parseInt(args[10]);
 		}
-
+		boolean shutdown = false;
+		if (args.length > 11) {
+            shutdown = Integer.parseInt(args[11]) > 0;
+        }
 		// initiate Directories
 		Ftp4JClientTransactionTest client = new Ftp4JClientTransactionTest(server,
 				port, username, passwd, account, isSSL);
@@ -138,6 +141,24 @@ public class FtpClient {
 				" Real: " + (date2 - date1) + " OK: " +
 				numberOK.get() + " KO: " + numberKO.get() + " Trf/s: " +
 				(numberOK.get() * 1000 / (date2 - date1)));
-	}
+		if (shutdown) {
+    		client = new Ftp4JClientTransactionTest(server,
+                    port, "fredo", "fred1", "a", isSSL);
+            if (!client.connect()) {
+                System.err.println("Cant connect");
+                FtpClient.numberKO.incrementAndGet();
+                return;
+            }
+            try {
+                String [] results = client.executeSiteCommand("internalshutdown abcdef");
+                System.err.print("SHUTDOWN: ");
+                for (String string : results) {
+                    System.err.println(string);
+                }
+            } finally {
+                client.disconnect();
+            }
+		}
+    }
 
 }
