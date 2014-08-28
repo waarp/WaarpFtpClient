@@ -142,6 +142,10 @@ public class FtpClient {
 				numberOK.get() + " KO: " + numberKO.get() + " Trf/s: " +
 				(numberOK.get() * 1000 / (date2 - date1)));
 		if (shutdown) {
+		    try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+            }
     		client = new Ftp4JClientTransactionTest(server,
                     port, "fredo", "fred1", "a", isSSL);
             if (!client.connect()) {
