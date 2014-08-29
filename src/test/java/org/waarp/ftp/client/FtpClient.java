@@ -90,6 +90,12 @@ public class FtpClient {
 		} finally {
 			client.logout();
 		}
+		if (isSSL > 0) {
+		    try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+            }
+		}
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		long date1 = System.currentTimeMillis();
 		for (int i = 0; i < numberThread; i++) {
@@ -142,8 +148,8 @@ public class FtpClient {
 				numberOK.get() + " KO: " + numberKO.get() + " Trf/s: " +
 				(numberOK.get() * 1000 / (date2 - date1)));
 		if (shutdown) {
-		    try {
-                Thread.sleep(10);
+            try {
+                Thread.sleep(500);
             } catch (InterruptedException e) {
             }
     		client = new Ftp4JClientTransactionTest(server,
