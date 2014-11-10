@@ -35,79 +35,79 @@ import it.sauronsoftware.ftp4j.FTPIllegalReplyException;
  * 
  */
 public class DataTimeOutListener implements FTPDataTransferListener {
-	/**
-	 * Internal Logger
-	 */
-	private static final WaarpLogger logger = WaarpLoggerFactory.getLogger(DataTimeOutListener.class);
+    /**
+     * Internal Logger
+     */
+    private static final WaarpLogger logger = WaarpLoggerFactory.getLogger(DataTimeOutListener.class);
 
-	private final FTPClient client;
-	private Timer timer;
-	private long timeout = 10000;
-	private long last = System.currentTimeMillis();
-	private boolean finished = false;
-	private String command;
-	private String file;
+    private final FTPClient client;
+    private Timer timer;
+    private long timeout = 10000;
+    private long last = System.currentTimeMillis();
+    private boolean finished = false;
+    private String command;
+    private String file;
 
-	public DataTimeOutListener(FTPClient client, long timeout, String command, String file) {
-		this.client = client;
-		timer = new Timer(true);
-		this.timeout = timeout;
-		this.command = command;
-		this.file = file;
-	}
+    public DataTimeOutListener(FTPClient client, long timeout, String command, String file) {
+        this.client = client;
+        timer = new Timer(true);
+        this.timeout = timeout;
+        this.command = command;
+        this.file = file;
+    }
 
-	private void renewTask() {
-		TimerTask task = new TimerTask() {
-			public void run() {
-				if (finished) {
-					return;
-				}
-				long now = System.currentTimeMillis();
-				if (now - last - timeout > 0) {
-					try {
-						logger.warn("Timeout during file transfer: " + command + " " + file);
-						client.abortCurrentDataTransfer(true);
-					} catch (IOException e) {
-					} catch (FTPIllegalReplyException e) {
-					}
-				} else {
-					renewTask();
-				}
-			}
-		};
-		timer.schedule(task, timeout);
-	}
+    private void renewTask() {
+        TimerTask task = new TimerTask() {
+            public void run() {
+                if (finished) {
+                    return;
+                }
+                long now = System.currentTimeMillis();
+                if (now - last - timeout > 0) {
+                    try {
+                        logger.warn("Timeout during file transfer: " + command + " " + file);
+                        client.abortCurrentDataTransfer(true);
+                    } catch (IOException e) {
+                    } catch (FTPIllegalReplyException e) {
+                    }
+                } else {
+                    renewTask();
+                }
+            }
+        };
+        timer.schedule(task, timeout);
+    }
 
-	@Override
-	public void started() {
-		renewTask();
-		last = System.currentTimeMillis();
-	}
+    @Override
+    public void started() {
+        renewTask();
+        last = System.currentTimeMillis();
+    }
 
-	@Override
-	public void transferred(int length) {
-		last = System.currentTimeMillis();
-	}
+    @Override
+    public void transferred(int length) {
+        last = System.currentTimeMillis();
+    }
 
-	@Override
-	public void completed() {
-		finished = true;
-		last = System.currentTimeMillis();
-		timer.cancel();
-	}
+    @Override
+    public void completed() {
+        finished = true;
+        last = System.currentTimeMillis();
+        timer.cancel();
+    }
 
-	@Override
-	public void aborted() {
-		finished = true;
-		last = System.currentTimeMillis();
-		timer.cancel();
-	}
+    @Override
+    public void aborted() {
+        finished = true;
+        last = System.currentTimeMillis();
+        timer.cancel();
+    }
 
-	@Override
-	public void failed() {
-		finished = true;
-		last = System.currentTimeMillis();
-		timer.cancel();
-	}
+    @Override
+    public void failed() {
+        finished = true;
+        last = System.currentTimeMillis();
+        timer.cancel();
+    }
 
 }

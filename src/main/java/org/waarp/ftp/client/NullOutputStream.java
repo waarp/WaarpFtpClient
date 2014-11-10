@@ -14,34 +14,34 @@ import java.io.OutputStream;
  */
 public class NullOutputStream extends OutputStream {
 
-	/**
+    /**
 	 * 
 	 */
-	public NullOutputStream() {
-	}
+    public NullOutputStream() {
+    }
 
-	@Override
-	public void close() throws IOException {
-	}
+    @Override
+    public void close() throws IOException {
+    }
 
-	@Override
-	public void flush() throws IOException {
-	}
+    @Override
+    public void flush() throws IOException {
+    }
 
-	@Override
-	public void write(byte[] b, int off, int len) throws IOException {
-	}
+    @Override
+    public void write(byte[] b, int off, int len) throws IOException {
+    }
 
-	@Override
-	public void write(byte[] b) throws IOException {
-	}
+    @Override
+    public void write(byte[] b) throws IOException {
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.io.OutputStream#write(int)
-	 */
-	@Override
-	public void write(int b) throws IOException {
-	}
+    /*
+     * (non-Javadoc)
+     * @see java.io.OutputStream#write(int)
+     */
+    @Override
+    public void write(int b) throws IOException {
+    }
 
 }
