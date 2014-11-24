@@ -250,7 +250,6 @@
 	            -link http://java.sun.com/javase/6/docs/api/
 
 				-group "Waarp FTP Client for R66 package" "org.waarp.ftp.client*"
-				-group "Waarp FTP Client for Gateway package" "org.waarp.ftp.gateway.exec*"
 
 	            -sourceclasspath ${basedir}/target/classes
 							</additionalparam>
