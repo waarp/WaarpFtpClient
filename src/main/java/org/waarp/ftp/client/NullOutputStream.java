@@ -36,10 +36,6 @@ public class NullOutputStream extends OutputStream {
     public void write(byte[] b) throws IOException {
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.io.OutputStream#write(int)
-     */
     @Override
     public void write(int b) throws IOException {
     }
