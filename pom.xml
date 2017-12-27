@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpCommon</artifactId>
-			<version>3.0.8</version>
+			<version>3.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Core</artifactId>
-			<version>3.0.4</version>
+			<version>3.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Simpleimpl</artifactId>
-			<version>3.0.4</version>
+			<version>3.0.5</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
