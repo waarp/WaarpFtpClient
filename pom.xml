@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>WaarpFtpClient</artifactId>
 	<name>Ftp R66 client </name>
-	<version>3.0.4</version>
+	<version>3.0.5</version>
 	<description>FTP client -wrapper of ftp4j- for Waarp solution</description>
 	<url>http://waarp.github.com/WaarpFtpClient</url>
 	<inceptionYear>2009</inceptionYear>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpCommon</artifactId>
-			<version>3.0.9</version>
+			<version>3.0.10</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Core</artifactId>
-			<version>3.0.5</version>
+			<version>3.0.6</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Simpleimpl</artifactId>
-			<version>3.0.5</version>
+			<version>3.0.6</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
