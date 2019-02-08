@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Core</artifactId>
-			<version>3.0.6</version>
+			<version>3.0.7</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Simpleimpl</artifactId>
-			<version>3.0.6</version>
+			<version>3.0.7</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
