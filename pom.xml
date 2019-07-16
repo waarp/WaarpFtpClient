@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>WaarpFtpClient</artifactId>
 	<name>Ftp R66 client </name>
-	<version>3.0.6</version>
+	<version>3.0.7</version>
 	<description>FTP client -wrapper of ftp4j- for Waarp solution</description>
 	<url>http://waarp.github.com/WaarpFtpClient</url>
 	<inceptionYear>2009</inceptionYear>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpCommon</artifactId>
-			<version>3.0.11</version>
+			<version>3.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Core</artifactId>
-			<version>3.0.7</version>
+			<version>3.0.8</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtp-Simpleimpl</artifactId>
-			<version>3.0.7</version>
+			<version>3.0.8</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -91,7 +91,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>1.15</version>
+        <version>1.16</version>
 				<configuration>
 				  <signature>
 					<groupId>org.codehaus.mojo.signature</groupId>
